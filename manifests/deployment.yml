@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: akspipes 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: akspipes
+  template:
+    metadata:
+      labels:
+        app: akspipes 
+    spec:
+      containers:
+        - name: akspipes 
+          image: stacr1.azurecr.io/akspipes
+          ports:
+          - containerPort: 8080
